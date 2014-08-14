@@ -1,7 +1,7 @@
 noip-updater
 ============
 
-Lightweight no-ip.com IP Address Updater
+**Lightweight no-ip.com IP Address Updater**
 
 Today many consumer-grade routers offer some kind of facility to update a DynDNS service with your current IP address. This way you can always reach your home network via VPN (or your web server) while on the go.
 
@@ -12,6 +12,7 @@ I run a Raspberry Pi and could likely have used the tools made available by that
 The script doesn't run as a daemon, so you'll have to use a `cronjob` to start it e.g. every 10 minutes. Between that time the values will be stored in a file called "noip-settings.txt" and only updated once you hit an API error or a new IP address was detected.
 
 **Here is a example for an IP address getting updated:**
+
 (IP is getting updated, as the stored IP differs from IP reported by online site)
 
 ```
@@ -25,6 +26,7 @@ Aug 14 12:40:10 raspberrypi noip.py: Successfully written status file to disk!
 ```
 
 **Here is a example how it will look most of the time:**
+
 (IP not getting updated, as it is still the same)
 
 ```
@@ -40,4 +42,4 @@ The API guide of no-ip.com asks you to only contact their update-service when yo
 
 If you plan to let this run for a long time, it is good practice on a Raspberry Pi to have the /var/log in memory instead of the SD card. The IP address etc on SD (noip-settings.txt) is only updated once per day or whenever your IP address changes - this shouldn't be too much of a burden for any SD.
 
-Before your first start, you'll need to add your `Username`, `Password` and `hostname` to the script.
+Before your first start, you'll need to add your `username`, `password` and `hostname` to the script.
